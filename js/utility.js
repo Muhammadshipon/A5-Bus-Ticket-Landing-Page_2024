@@ -19,11 +19,16 @@ function discountPrice20(){
   const grandTotal = priceNum - discount ;
   setInnerText('grand-total-price',grandTotal);
    document.getElementById('label').style.display = 'none'
+
+
+   setInnerText('discount-total-price',discount);
+   document.getElementById('discount-container').style.display = 'inline-block'
 }
 
 
  document.getElementById('coupon-button').addEventListener('click',discountPrice20)
 
  
-    
-
+                                                                               
+                                                            
+ 

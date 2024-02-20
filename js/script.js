@@ -5,6 +5,7 @@ const selectArr =[];
 let total = 0;
 let count = 0;
 document.getElementById('coupon-button').setAttribute('disabled',true)
+document.getElementById('next-btn').setAttribute('disabled',true)
 for(const seat of allSeats){
   const element = seat.innerText ;
 
@@ -22,7 +23,8 @@ for(const seat of allSeats){
     
        leftSeats = leftSeats - 1 ;
     setInnerText('seats-left',leftSeats);
-
+   const phn = document.getElementById('phone').value
+  document.getElementById('next-btn').removeAttribute('disabled')
 const tBody = document.getElementById('t-body');
 const tr = document.createElement('tr');
 const td1 = document.createElement('td');
@@ -47,26 +49,32 @@ grandTotal.innerText = total;
 
 
 
-document.getElementById('coupon-field').addEventListener('keyup',function(){
-  const field = document.getElementById('coupon-field');
-    const text = field.value ;
 
-    if(text === 'NEW15'){
-      document.getElementById('coupon-button').removeAttribute('disabled');
-     
-      
-    }
-
-    else if( text === 'Couple 20'){
-      document.getElementById('coupon-button').removeAttribute('disabled');
-    }
-    
-  else{document.getElementById('coupon-button').setAttribute('disabled',true)}
- })
-  
  
 
       }
+     else{ alert('You can get maximum 4 Tickets')
+    }
+
+    document.getElementById('coupon-field').addEventListener('keyup',function(){
+      const field = document.getElementById('coupon-field');
+        const text = field.value ;
+    
+        if(text === 'NEW15' && count >=4){
+          document.getElementById('coupon-button').removeAttribute('disabled');
+         
+          
+        }
+    
+        else if( text === 'Couple 20' && count >=4){
+          document.getElementById('coupon-button').removeAttribute('disabled');
+        }
+        
+      else{document.getElementById('coupon-button').setAttribute('disabled',true)}
+     })
+        
+    
+    
 
     }
 
