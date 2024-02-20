@@ -85,7 +85,6 @@
  </header>
 
 
-
  <main>
 
               <!-- coupon-code section  -->
@@ -271,15 +270,15 @@ J
   </div>
 <hr>
 <div class="flex justify-between my-3">
-  <p class="text-xl font-bold">Total Price</p> <p class="text-xl font-bold mr-16">BDT <span id="total-price" class="text-2xl">0</span></p>
+  <p class="text-xl font-bold">Total Price</p> <p class="text-xl font-bold mr-16">BDT <span id="total-price" class="text-2xl font-sans">0</span></p>
 </div>
-<label class="input input-bordered flex items-center gap-12 w-[100%] h-14">
+<label class="input input-bordered flex items-center gap-12 w-[100%] h-14" id="label">
   <input type="text" class="grow " placeholder="Have Any Coupon?" id="coupon-field"  />
   <button class="btn bg-[#1DD100]  text-white font-bold px-14" id="coupon-button">Apply</button>
 </label>
 
 <div class="flex justify-between my-3">
-  <p class="text-xl font-bold">Grand Total</p> <p class="text-xl font-bold mr-16">BDT <span id="grand-total-price" class="text-2xl">0</span></p>
+  <p class="text-xl font-bold">Grand Total</p> <p class="text-xl font-bold mr-16">BDT <span id="grand-total-price" class="text-2xl font-sans">0</span></p>
 </div>
 
 </div>
@@ -301,10 +300,25 @@ J
                                 <input type="text" class="grow" placeholder="Phone Number" />
                               </label>
 
-                              <button class="btn w-full bg-[#1DD100] text-white font-extrabold">Next</button>
+                              <button id ="next-btn" class="btn w-full bg-[#1DD100] text-white font-extrabold" onclick="my_modal_1.showModal()">Next</button>
+                       <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box text-center flex flex-col justify-center items-center">
+                          <img src="images/success.png" class="w-24">
+                          <h3 class="font-bold text-5xl mt-4">Thank You</h3>
+                          <p class="py-4">Your details has been Successfully Submitted</p>
+                          <div class="modal-action">
+                            <form method="dialog">
+                              <!-- if there is a button in form, it will close the modal -->
+                              <button class=" p-5 w-[300px] text-white font-extrabold rounded-3xl border-none bg-green-400">OK</button>
+                            </form>
+                          </div>
+                                      </div>
+                                    </dialog>
                               <div class="flex justify-around underline mt-12"><a href="">Terms and Conditions</a>
                               <a href="">Cancellation Policy</a></div>
-                                                       
+                   <!-- Open the modal using ID.showModal() method -->
+
+                                    
 
 
 </div>
