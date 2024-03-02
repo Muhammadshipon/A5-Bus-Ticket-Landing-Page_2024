@@ -3,16 +3,20 @@ function setInnerText(id,value){
 }
 
 
-function discountPrice15(){
-  const price = document.getElementById('grand-total-price').innerText;
+function discountPrice(){
+  const couponCode = document.getElementById('coupon-field').value;
+  if(couponCode === 'NEW15'){ const price = document.getElementById('grand-total-price').innerText;
   const priceNum = parseInt(price);
   const discount = priceNum * 0.15 ;
   const grandTotal = priceNum - discount ;
   setInnerText('grand-total-price',grandTotal);
- 
-}
+  document.getElementById('label').style.display = 'none'
 
-function discountPrice20(){
+
+  setInnerText('discount-total-price',discount);
+  document.getElementById('discount-container').style.display = 'flex'
+ }
+ else if(couponCode === 'Couple 20'){
   const price = document.getElementById('grand-total-price').innerText;
   const priceNum = parseInt(price);
   const discount = priceNum * 0.2 ;
@@ -22,13 +26,20 @@ function discountPrice20(){
 
 
    setInnerText('discount-total-price',discount);
-   document.getElementById('discount-container').style.display = 'inline-block'
+   document.getElementById('discount-container').style.display = 'flex'
+ }
+ else{
+  alert('Invalid Coupon Code');
+ }
+ 
 }
 
 
- document.getElementById('coupon-button').addEventListener('click',discountPrice20)
+
+
+ document.getElementById('coupon-button').addEventListener('click',discountPrice)
 
  
                                                                                
                                                             
- 
+
